@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ai-migrate-commerce extension" default="test">
+
+	<target name="test" description="Executes all tests">
+		<echo msg="No tests available" />
+	</target>
+
+	<target name="testperf" description="Executes all performance tests">
+		<echo msg="No performance tests available" />
+	</target>
+
+	<target name="coverage" description="Generates the code coverage report">
+		<echo msg="No coverage available" />
+	</target>
+
+	<target name="check" description="Executes all tests">
+		<echo msg="No checks available" />
+	</target>
+
+	<target name="clean" description="Cleans up temporary files">
+		<echo msg="No clean up available" />
+	</target>
+
+	<target name="i18n" description="Creates all translation files">
+		<echo msg="No translations available" />
+	</target>
+
+	<target name="build" description="Builds package for deployment">
+		<echo msg="No build available" />
+    </target>
+
+	<target name="release" description="Creates new release" depends="build">
+		<propertyprompt propertyName="version" promptText="Enter release version" promptCharacter=":" useExistingValue="true"/>
+		<exec command="git branch ${version}" checkreturn="true" logoutput="true" />
+		<exec command="git tag -a ${version} -m 'Release ${version}'" checkreturn="true" logoutput="true" />
+		<exec command="git push origin ${version}" checkreturn="true" logoutput="true" />
+		<exec command="git push --tags" checkreturn="true" logoutput="true" />
+	</target>
+
+	<target name="all" depends="test,check,build" description="Builds all parts of the package">
+	</target>
+
+</project>
