@@ -1,7 +1,7 @@
 {
 	"name": "aimeos/ai-migrate-txcommerce",
 	"description": "Aimeos migrate TYPO3 commerce extension",
-	"keywords": ["aimeos", "extension", "TYPO3", "commerce"]
+	"keywords": ["aimeos", "extension", "TYPO3", "commerce"],
 	"type": "aimeos-extension",
 	"license": "LGPL-3.0",
 	"require": {
